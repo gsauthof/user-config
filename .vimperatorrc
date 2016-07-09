@@ -1,0 +1,12 @@
+"2.3.1 (created: 2010/04/07 18:56:53)
+
+" `toolbars` is an alias for `gui`
+" other items: addons
+set gui=none,tabs,bookmarks
+
+" default runtimepath:
+" set runtimepath=~/.vimperator
+
+source! ~/.vimperatorrc.local
+
+" vim: set ft=vimperator:
