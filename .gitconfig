@@ -1,0 +1,20 @@
+[color]
+diff        = auto
+status      = auto
+branch      = auto
+interactive = true
+
+[alias]
+parents = show -s --pretty=format:'%P'
+co      = checkout
+ci      = commit
+di      = diff --color-words
+
+[push]
+default = simple
+
+# define user/{email,name} in very user specific
+# dotfile (where the path is relative to the origin
+# of this file)
+[include]
+path = .gitconfig.local
