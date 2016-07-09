@@ -1,0 +1,13 @@
+*.o
+*.a
+*.so
+*.hi
+*.bak
+*.aux
+*.toc
+*.idx
+*.pdf
+*.ps
+*.swp
+*.out
+*.log

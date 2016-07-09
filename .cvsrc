@@ -1,0 +1,12 @@
+# enable compression, which is by default disabled
+# sometimes useful: -q <- quiet
+cvs -z3
+
+# output unified diff and function names
+diff -u -p
+
+# create missing directories and remove (prune) empty ones
+update -dP
+
+# remove empty directories
+checkout -P
