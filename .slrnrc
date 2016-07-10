@@ -1,0 +1,93 @@
+% On startup, slrn selects the NNTP server that equals
+% $NNTPSERVER. Thus, you can call slrn like this:
+%
+% NNTPSERVER=news.gmane.org slrn
+
+% GMANE provides an read/write interface to many mailinglists
+% and even a gateway to RSS feeds!
+% cf. http://gmane.org/faq.php
+%     http://gwene.org/about.php
+server "nntps://news.gmane.org" ".newsrc-gmane"
+% outdated:
+% server "snews://snews.gmane.org" ".newsrc-gmane"
+
+% Good provider for 10 Eur/year
+server "news.individual.net"    ".newsrc-dfn"
+% Same provider but for free if your university has subscribed
+% this DFN service
+server "News.CIS.DFN.DE"        ".newsrc-dfn"
+
+
+% slrn variable reference:
+% http://slrn.sourceforge.net/docs/slrn-manual-6.html
+
+
+set server_object       "nntp"
+set post_object         "nntp"
+% enabling that only makes sense for machines having a usable FQDN
+set generate_message_id 0
+% if the server supports it, slrn can retrieve the msg-id from
+% the server and store it as part of the saved post
+% set use_recommended_msg_id 1
+
+% If non-zero, slrn reads the active file on each startup.  You might want to
+% use this if your network connection is fast or the server has few groups.
+% set read_active 1
+
+set non_Xbrowser "lynx    '%s'"
+set Xbrowser     "firefox '%s'"
+
+% print command:
+%set printer_name "lpr -Plp"
+
+% all paths are relative to $HOME
+set save_posts         "news/posts"
+set save_replies       "news/replies"
+set failed_posts_file  "news/failed_posts"
+set scorefile          "news/score"
+set decode_directory   "news/files"
+set save_directory     "news/files"
+set postpone_directory "news/postponed"
+
+% 'thread, then sort by date with most recent first'
+set sorting_method             9
+% the default is 0: same subject -> same thread && references
+% 2: references only
+% set new_subject_breaks_threads 0
+
+set display_cursor_bar	1
+
+% 'both scores and subjects are colored by score'
+set color_by_score 3
+
+set kill_score -500
+
+set unsubscribe_new_groups 1
+
+visible_headers "From:,Subject:,Newsgroups:,Followup-To:,Reply-To:,Date:,Message-ID:,User-Agent:"
+
+% prompt if more than n unread articles could be fetched
+set query_read_group_cutoff 600 
+
+% Settings for offline reading
+% set spool_inn_root "/path/to/news/pull"
+% set spool_root     "/path/to/news/pull/news"
+% set spool_nov_root "/path/to/news/pull/news"
+% set use_slrnpull   1
+% set read_active    1
+% set server_object  "spool"
+
+
+include ".slrnrc_color"
+
+% for setting user specific option, e.g.:
+% set username "juser"
+% set hostname "example.org"
+% set realname "Joe User"
+% set organization "User & Co. KG"
+%% set replyto   "ju@example.com"
+%% set signature ".signature"
+% nnrpaccess "news.example.org" "juser" "secretpw"
+include ".slrnrc.local"
+
+
