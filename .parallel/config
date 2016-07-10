@@ -1,0 +1,16 @@
+# Disable the GNU parallel citation boilerplate.
+# Yes, we all will cite a GNU parallel paper if we really base
+# our to be published work on GNU parallel.
+# This should be self-evident.
+#
+# GNU parallel behaves like this: if you call it with --will-cite
+# then it will print a bibtex item and touch
+# `~/.parallel/will-cite`. On startup, GNU parallel omits the
+# boilerplate if this file is present.
+#
+# Alternatively, one can disable the boilerplate via
+# `--no-notice`.
+#
+# The `--no-notice` option is not documented but works (as-of
+# version 20160222).
+--no-notice
