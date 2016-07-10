@@ -1,0 +1,44 @@
+# enable some extension
+[extensions]
+# 'The functionality of this extension has been include in core
+# Mercurial since version 2.3.'
+# hgext.graphlog  = 
+color           =
+# manage stack (queue) of patches
+mq              = 
+# since 1.8 part of the core
+#hgext.bookmarks = 
+extdiff         = 
+# convert foreign repositories
+convert         = 
+# invoke a pager similar to git, systemctl/journalctl
+pager           =
+
+[extdiff]
+cmd.vimdiff  = vim
+opts.vimdiff = -f '+next' '+execute "DirDiff" argv(0) argv(1)'
+
+#[convert]
+#hg.usebranchnames = 0
+#hg.clonebranches   = 1
+#hg.tagsbranch      = foobar
+
+#[smtp]
+#host = localhost
+
+# how to overwrite some of the default colors
+#[color]
+#status.modified = magenta bold
+#status.added    = green bold
+#status.removed  = red bold blue_background
+#status.deleted  = cyan bold
+#status.unknown  = blue bold underline
+#status.ignored  = black bold
+
+# by default the pager extension uses $PAGER
+#[pager]
+#pager = LESS='FRX' less
+
+# read local config like ui/username
+# path is relative to the origin of this file
+%include .hgrc.local
