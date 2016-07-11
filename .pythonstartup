@@ -1,0 +1,38 @@
+# Enable it via something like:
+#
+# export PYTHONSTARTUP=~/.pythonstartup
+
+
+import sys
+
+if sys.version_info[0] < 3:
+    # Since Python 3.4 history saving to `~/.python_history` and
+    # completion is configured, by default
+    # (cf. https://docs.python.org/3/library/site.html#rlcompleter-config)
+    #
+    # Thus, the below is only enabled for Python 2.
+
+    import atexit
+    import os
+    import readline
+    import rlcompleter
+
+    historyPath = os.path.expanduser("~/.cache/python2_history")
+
+    def save_history(historyPath=historyPath):
+        import readline
+        readline.write_history_file(historyPath)
+
+    if os.path.exists(historyPath):
+        readline.read_history_file(historyPath)
+
+    readline.parse_and_bind("tab: complete")
+
+    atexit.register(save_history)
+
+    del os, atexit, readline, rlcompleter, save_history, historyPath
+else:
+    pass
+
+
+del sys
