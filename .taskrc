@@ -1,0 +1,51 @@
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Files
+data.location=~/.task
+
+# Color theme (uncomment one to use)
+
+#include /usr/share/doc/task/rc/light-16.theme
+#include /usr/share/doc/task/rc/light-256.theme
+#include /usr/share/doc/task/rc/dark-16.theme
+#include /usr/share/doc/task/rc/dark-256.theme
+#include /usr/share/doc/task/rc/dark-red-256.theme
+
+#include /usr/share/doc/task/rc/dark-green-256.theme
+# Gray4 is just too gray ...
+# color.sync.added= # color.sync.added=gray4
+
+#include /usr/share/doc/task/rc/dark-blue-256.theme
+#include /usr/share/doc/task/rc/dark-violets-256.theme
+
+include /usr/share/doc/task/rc/dark-yellow-green.theme
+# Gray4 is just too gray ...
+color.sync.added= # color.sync.added=gray4
+
+#include /usr/share/doc/task/rc/dark-gray-256.theme
+#include /usr/share/doc/task/rc/dark-gray-blue-256.theme
+#include /usr/share/doc/task/rc/solarized-dark-256.theme
+#include /usr/share/doc/task/rc/solarized-light-256.theme
+#include /usr/share/doc/task/rc/no-color.theme
+
+# Get some holidays
+# The files that are included with task warrior are imported
+# from http://holidata.net/
+
+include /usr/share/doc/task/rc/holidays.de-DE.rc
+
+# Report that is similar to the default report
+# but the tasks are ordered by the their due date.
+# 
+# Display via: `task due`
+report.due.columns     = id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
+report.due.description = Most due tasks
+report.due.filter      = status:pending limit:page
+report.due.labels      = ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
+report.due.sort        = due
+
+include ~/.taskrc.local
