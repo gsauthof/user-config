@@ -1,0 +1,27 @@
+#dvd-device=/dev/cdrom
+#dvd-device=/dev/dvd
+
+osdlevel=0
+
+# vo -> video output
+# default on Linux:
+# vo=xv
+
+# work-around driver issues, like e.g. always-foreground,
+# no-fullscreen
+vo=gl
+
+# most convenient since probably 2011 on recent Linux
+# distributions:
+ao=pulse
+
+# Fullscreen!
+fs=yes
+
+# 'Turn off automatic subtitle file loading'
+# noautosub=yes
+
+# 'This  option  specifies  how much memory (in kBytes) to use when
+# precaching a file or URL.  Especially useful on slow media.'
+cache=1024
+
