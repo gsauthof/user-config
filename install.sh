@@ -1,6 +1,7 @@
 #!/bin/bash
 
-date=date
+: ${date:=date}
+: ${find:=find}
 : ${dry:=0}
 base="${PWD#$HOME/}"
 
@@ -44,7 +45,7 @@ function create_dir()
 
 function link_target()
 {
-  local a=$(ls -l "$1")
+  local a=$(ls -ld "$1")
   local t=${a#*-> }
   echo "$t"
 }
@@ -57,29 +58,39 @@ function create_link()
 
 function create_links()
 {
-  for file in $(find -type f \
+  for file in $("$find" -type f \
+    '(' \
     -not -name install.sh \
     -not -name README.md \
     -not -name '*.swp' \
-    -not -path './.git/*' ) ; do
+    -not -name '.gitmodules' \
+    -not -path './.git/*' \
+    -not -path './.vim/bundle/*' \
+    ')' -or '(' -path './.vim/bundle/*/.git' ')'
+    ) ; do
     file=${file#./}
     #echo "$file"
 
-    local src="$HOME/$file"
+    # remove /.git suffix of vim git bundles
+    file=${file%/.git}
+    local src="$HOME/${file}"
     local dst=$(rel_prefix "$file")"$base/$file"
 
-    if [ -L "$HOME/$file" ] ; then
-      if [ $(link_target "$src") = "$dst" ]; then
-        echo "Link $HOME/$file is up-to-date"
+    # tests if it exists AND is a link
+    # find just tests if it is a link ...
+    #if [ -L "$src" ] ; then
+    if "$find" "$src" > /dev/null 2>&1 ; then
+      if [ "$(link_target "$src")" = "$dst" ]; then
+        echo "Link $src is up-to-date"
         continue
       else
-        echo "Replacing symbolic link $HOME/$file"
+        echo "Replacing symbolic link $src"
       fi
-    elif [ -f "$HOME/$file" ] ; then
-      echo "File $HOME/$file already exists"
-      move_existing "$HOME/$file"
-    elif [ -e "$HOME/$file" ] ; then
-      echo "Skipping irregular config file $HOME/$file"
+    elif [ -f "$src" -o -d "$src" ] ; then
+      echo "File $src already exists"
+      move_existing "$src"
+    elif [ -e "$src" ] ; then
+      echo "Skipping irregular config file $src"
       continue
     fi
     create_dir "$file" "$HOME"

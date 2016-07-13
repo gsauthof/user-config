@@ -1,0 +1,42 @@
+[submodule ".vim/bundle/Align"]
+	path = .vim/bundle/Align
+	url = https://github.com/vim-scripts/Align.git
+[submodule ".vim/bundle/cpp-vim"]
+	path = .vim/bundle/cpp-vim
+	url = https://github.com/vim-jp/cpp-vim.git
+[submodule ".vim/bundle/ingo-library"]
+	path = .vim/bundle/ingo-library
+	url = https://github.com/vim-scripts/ingo-library.git
+[submodule ".vim/bundle/SyntaxRange"]
+	path = .vim/bundle/SyntaxRange
+	url = https://github.com/vim-scripts/SyntaxRange.git
+[submodule ".vim/bundle/tabular"]
+	path = .vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule ".vim/bundle/vim-commentary"]
+	path = .vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule ".vim/bundle/vim-eunuch"]
+	path = .vim/bundle/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch.git
+[submodule ".vim/bundle/vim-fswitch"]
+	path = .vim/bundle/vim-fswitch
+	url = https://github.com/derekwyatt/vim-fswitch.git
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/vim-markdown"]
+	path = .vim/bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule ".vim/bundle/vim-pathogen"]
+	path = .vim/bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule ".vim/bundle/vim-sensible"]
+	path = .vim/bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
+[submodule ".vim/bundle/vim-slime"]
+	path = .vim/bundle/vim-slime
+	url = https://github.com/jpalardy/vim-slime.git
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
