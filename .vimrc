@@ -1,9 +1,25 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
-" old method
+" old method:
 " call pathogen#infect()
 syntax on
 filetype plugin indent on
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Apparently, colorscheme doesn't reliably work when
+" placed in the ~/.vimrc - may yield different colors
+" than when called interactively:
+" colorscheme ron
+" colorscheme desert
+
+" relies on another script doing something similar to
+" if g:colors_name then colorscheme g:colors_name
+" works on Fedora 23
+let g:colors_name="ron"
+" let g:colors_name="desert"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab Stuff
