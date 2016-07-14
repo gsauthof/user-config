@@ -1,0 +1,73 @@
+# shell rc file that can be sourced from a .zshrc/.bashrc/.profile/.kshrc
+
+
+#################################################################
+# Environment Variables                                         #
+#################################################################
+
+export CVS_RSH=ssh
+export EDITOR=vim
+eval $(dircolors -b) # LS_COLORS
+export NNTPSERVER=news.gmane.org
+export PAGER=less
+
+# ~/local/bin is my personal choice
+# other popular paths in the $HOME are:
+# - ~/.local/bin - used by Ruby user installs (gem)
+# - ~/bin        - used by Python user installs (pip3 install --user)
+# - ~/.cabal/bin - used by Haskell user install (cabal)
+# The 'Gretchenfrage' now is where to put those local paths - before
+# or after the systems ones.
+export PATH=~/local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:~/bin:~/.local/bin:~/.cabal/bin
+
+
+# used e.g. by `texdoc`
+export PDFVIEWER=mupdf
+export PYTHONSTARTUP=~/.pythonstartup
+export SYSTEMD_LESS=FRXMK
+export VISUAL=vim
+
+# Solaris 10 is quite unusable without OpenCSW, thus the
+# likelihood that it is installed is quite high. Also, Solaris 10
+# stores POSIX conforming versions of some commands in unusual
+# locations.
+if [ $(uname -s) = "SunOS" ]; then
+  export INFOPATH=/opt/csw/share/info
+  export MANPATH=/opt/csw/man:/usr/man
+  export PATH=~/local/bin:/usr/ccs/bin:/opt/csw/gnu:/opt/csw/bin:/usr/xpg6/bin:/usr/xpg4/bin:/usr/bin:~/bin:~/.local/bin:~/.cabal/bin
+fi
+
+#################################################################
+# Aliases                                                       #
+#################################################################
+
+alias dmesg='dmesg --human'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias g="grep --color=auto . -r -i --include '*.[chly]' --include '*.[cp]c' --include '*.hh' --include '*.[ch]pp' --include '*.[hc]xx' --include '*.[py]y' -e"
+# disable introductionary boilerplate
+alias gdb='gdb -q'
+alias grep='grep --color=auto -d skip'
+alias l.='ls -d .* --color=auto --time-style=long-iso'
+alias ll='ls -l --color=auto --time-style=long-iso'
+alias ls='ls --color=auto --time-style=long-iso'
+alias u='du -d1 -BM | sort -g'
+alias vi=vim
+alias zgrep='zgrep --color=auto'
+
+#################################################################
+# Functions                                                     #
+#################################################################
+
+function mcd()
+{
+  mkdir -p "$1" && cd "$1"
+}
+
+# set title of an X terminal
+function settitle()
+{
+  print -n "\e]0;$1\a"
+}
+
+[ -f ~/.shrc.local ] && . ~/.shrc.local
