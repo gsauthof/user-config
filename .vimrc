@@ -92,6 +92,8 @@ let g:lhs_markup="none"
 " TeX
 let g:tex_comment_nospell=1
 
+au FileType text,markdown,tex setlocal tw=65
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " XML Stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -116,6 +118,17 @@ autocmd FileType cmake setlocal commentstring=#\ %s
 " set spell
 au FileType tex,markdown,text setlocal spell
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Last Position Saving
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :help last-position-jump
+" This autocommand jumps to the last known position in a file
+" just after opening it, if the '"' mark is set:
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
+               \   exe "normal! g`\"" |
+               \ endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Switch between header/source pairs
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -126,4 +139,54 @@ au FileType tex,markdown,text setlocal spell
 au! BufEnter *.cc let b:fswitchdst = 'hh,h'
 au! BufEnter *.h  let b:fswitchdst = 'cc,c'
 map <F4> :FSHere<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Cscope
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("cscope")
+  cs reset " in case /etc/vimrc already added some databases
+  set csverb
+  " add any database in current directory
+  if filereadable("cscope.out")
+    cs add cscope.out
+  " else add database pointed to by environment
+  elseif $CSCOPE_DB != ""
+    cs add $CSCOPE_DB
+  endif
+  set cst "cscopetag
+
+  " keymappings for additional searches (besides the Ctrl+] one)
+  "
+  " from vim's cscope help page (and slightly modified)
+  nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+  nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+  nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+  " Using 'CTRL-spacebar' then a search type makes the vim window
+  " split horizontally, with search result displayed in
+  " the new window.
+  nmap <C-Space>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+  nmap <C-Space>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+  nmap <C-Space>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+
+  " Hitting CTRL-space *twice* before the search type does a vertical
+  " split instead of a horizontal one
+  nmap <C-Space><C-Space>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+  nmap <C-Space><C-Space>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+endif
 
