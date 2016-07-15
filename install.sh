@@ -76,10 +76,10 @@ function create_links()
     local src="$HOME/${file}"
     local dst=$(rel_prefix "$file")"$base/$file"
 
-    # tests if it exists AND is a link
+    # test tests if it exists AND is a link
     # find just tests if it is a link ...
     #if [ -L "$src" ] ; then
-    if "$find" "$src" > /dev/null 2>&1 ; then
+    if [ $("$find" "$src" -type l 2>/dev/null | wc -l) -eq 1 ]; then
       if [ "$(link_target "$src")" = "$dst" ]; then
         echo "Link $src is up-to-date"
         continue
