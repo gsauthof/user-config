@@ -49,6 +49,7 @@ alias g="grep --color=auto . -r -i --include '*.[chly]' --include '*.[cp]c' --in
 alias gdb='gdb -q'
 alias grep='grep --color=auto -d skip'
 alias l.='ls -d .* --color=auto --time-style=long-iso'
+alias la='ls -A --color=auto --time-style=long-iso'
 alias ll='ls -l --color=auto --time-style=long-iso'
 alias ls='ls --color=auto --time-style=long-iso'
 alias u='du -d1 -BM | sort -g'
@@ -69,5 +70,12 @@ function settitle()
 {
   print -n "\e]0;$1\a"
 }
+
+
+#################################################################
+# Misc                                                          #
+#################################################################
+
+# umask 077
 
 [ -f ~/.shrc.local ] && . ~/.shrc.local
