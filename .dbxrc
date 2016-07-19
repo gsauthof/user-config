@@ -1,0 +1,46 @@
+
+#################################################################
+# Aliases                                                      #
+#################################################################
+
+alias c=cont
+alias d=delete
+alias do=down
+alias dis='handler -disable'
+alias en='handler -enable'
+alias g='gdb on'
+alias go='gdb off'
+alias l=list
+alias n=next
+alias o=step out
+alias p=print
+alias r=run
+alias s=step
+alias st=status
+alias u=up
+alias x=examine
+
+#################################################################
+# Misc                                                          #
+#################################################################
+
+# Solaris Studio dbx (>= 12) has a gdb emulation mode where it
+# understands a subset of gdb commands.
+#
+# Main advantage: it also implements gdb's repeat last command
+# if command is empty feature
+#
+# Disadvantages: no dbx command can be executed in that mode
+#
+# this mode can be entered/left via `gdb on`/`gdb off`
+
+
+# other dbx may support auto-repeat via setting a
+# `$repeatmode` variable, cf.
+#
+# http://stackoverflow.com/questions/10742005/is-there-a-way-to-configure-dbx-to-treat-a-blank-command-as-a-repeat-of-the-last
+
+# as last resort and not the same, but dbx supports history
+# expansion, i.e.  `!!` to repeat the last command
+
+
