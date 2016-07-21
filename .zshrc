@@ -9,11 +9,12 @@ setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
-bindkey '^R' history-incremental-search-backward
-# history-incremental-pattern-search-backward
 
 # vi-style key bindings
 bindkey -v
+# the one useful emacs-style key binding:
+bindkey '^R' history-incremental-search-backward
+# history-incremental-pattern-search-backward
 
 # Command completion
 zstyle :compinstall filename '$HOME/.zshrc'
