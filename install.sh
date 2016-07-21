@@ -115,3 +115,7 @@ fi
 
 create_links
 
+# cf. https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+mkdir ~/.cache
+chmod 700 ~/.cache/
+
