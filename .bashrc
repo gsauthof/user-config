@@ -49,7 +49,12 @@ bred='\[\e[1;31m\]'
 bgreen='\[\e[1;32m\]'
 bblue='\[\e[1;34m\]'
 
-PS1="\u@$bgreen\h$color_off \$ps1[$red\$?$color_off]\n$bblue\w$color_off $ "
+function ps1_pp_ret()
+{
+  [ "$1" -eq 0 ] && echo "$1" || echo -e "\e[1;31m $1 :-( "
+}
+
+PS1="$green\u@$bgreen\h$green \D{%Y-%m-%d} \t \${ps1}Exit[\$(ps1_pp_ret \$?)$green]\n$bblue\w$green $ $color_off"
 
 
 #################################################################
@@ -63,4 +68,5 @@ alias r='fc -s'
 
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
 
+true
 
