@@ -61,6 +61,7 @@ PS1="$green\u@$bgreen\h$green \D{%Y-%m-%d} \t \${ps1}Exit[\$(ps1_pp_ret \$?)$gre
 # Bash specific aliases                                         #
 #################################################################
 
+alias synch='history -a; history -c; history -r'
 # re-execute last command - defined by zsh, by default
 alias r='fc -s'
 
