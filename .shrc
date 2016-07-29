@@ -7,7 +7,6 @@
 
 export CVS_RSH=ssh
 export EDITOR=vim
-eval $(dircolors -b) # LS_COLORS
 export NNTPSERVER=news.gmane.org
 export PAGER=less
 
@@ -19,7 +18,6 @@ export PAGER=less
 # The 'Gretchenfrage' now is where to put those local paths - before
 # or after the systems ones.
 export PATH=~/local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:~/bin:~/.local/bin:~/.cabal/bin
-
 
 # used e.g. by `texdoc`
 export PDFVIEWER=mupdf
@@ -36,6 +34,9 @@ if [ $(uname -s) = "SunOS" ]; then
   export MANPATH=/opt/csw/man:/usr/man
   export PATH=~/local/bin:/usr/ccs/bin:/opt/csw/gnu:/opt/csw/bin:/usr/xpg6/bin:/usr/xpg4/bin:/usr/bin:~/bin:~/.local/bin:~/.cabal/bin
 fi
+
+# LS_COLORS - must come after PATH
+eval $(dircolors -b)
 
 #################################################################
 # Aliases                                                       #
