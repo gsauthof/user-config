@@ -5,7 +5,7 @@
 
 alias c=cont
 alias d=delete
-alias do=down
+alias dn=down
 alias dis='handler -disable'
 alias en='handler -enable'
 alias g='gdb on'
