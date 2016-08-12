@@ -44,6 +44,7 @@ eval $(dircolors -b)
 
 alias dmesg='dmesg --human'
 alias egrep='egrep --color=auto'
+alias feh='feh --scale-down'
 alias fgrep='fgrep --color=auto'
 alias g="grep --color=auto . -r -i --include '*.[chly]' --include '*.[cp]c' --include '*.hh' --include '*.[ch]pp' --include '*.[hc]xx' --include '*.[py]y' -e"
 # disable introductionary boilerplate
