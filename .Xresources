@@ -1,0 +1,33 @@
+! to explicitly reload this file
+!
+!     xrdb ~/.Xresources
+!
+! or
+!     xrdb -load ~/.Xresources
+
+xterm*scrollBar: false
+xterm*toolBar:            false
+xterm*geometry:           80x60
+
+
+xterm*saveLines: 4096
+XTerm*scrollTtyOutput: false
+XTerm*scrollKey: true
+
+
+! xterm*cursorColor: red
+
+! this is also the default
+xterm*reverseVideo: false
+! green
+xterm*foreground: #00ff00
+xterm*background: #000000
+
+
+
+! fix double/tripple click select behaviour
+XTerm*VT100.cutNewLine: false
+XTerm*VT100.cutToBeginningOfLine: false
+! maps character code ranges (ASCII/UTF-8 ...) to values
+! same value -> same class
+XTerm*VT100.charClass: 33:48,35:48,37:48,42:48,45-47:48,64:48,95:48,126:48
