@@ -1,0 +1,102 @@
+
+#################################################################
+# Basic Settings                                                #
+#################################################################
+
+# for re-sourcing the rc file in a running mutt
+macro index \Ch ":source ~/.muttrc\n" "Source .muttrc."
+
+# external mail retrieval
+macro index G "<enter-command>unset wait_key^m<shell-escape>~/local/bin/get_mail^m<enter-command>set wait_key^m" "get new mail"
+macro pager G "<enter-command>unset wait_key^m<shell-escape>~/local/bin/get_mail^m<enter-command>set wait_key^m" "get new mail"
+
+bind index - collapse-thread
+bind index _ collapse-all
+
+
+set folder=~/mail
+set use_from=yes
+set envelope_from=yes
+
+# Use (initial) From from the message one is replying but fix broken
+# ones (especially '"email" <email>' ones:
+set reverse_name=yes
+set reverse_realname=no
+
+
+set mime_forward=yes
+set mime_forward_rest=yes
+
+
+# search in header: from, subject, to, cc
+set simple_search="~f %s | ~s %s | ~C %s"
+
+set header_cache=~/.cache/mutt/header_cache/
+
+set signature=$HOME/signature/make_sig.sh|
+
+set print=ask-yes
+set print_command='f=`mktemp --tmpdir "$HOME"/.cache/mutt/`; muttprint -P A4 -p TO_FILE:"$f" && xdg-open "$f" && rm "$f"'
+
+
+#################################################################
+# Appearance                                                    #
+#################################################################
+
+# show only some header
+ignore *
+unignore date return spam from to cc subject x-mailer user-agent resent-from reply-to bcc mailing-list posted-to organ X-Bogosity
+
+# wrappers lines shouldn't be marked with plus signs ...
+set markers=no
+set pager_index_lines=10
+
+
+# the default should be ok
+# set status_format="..."
+
+
+# display threads
+set sort=threads
+# don't group messages into threads with same subject but without references
+set strict_threads=yes
+
+# message number, status flags, local time, display list name (if any),
+# message size, messages in a thread, subject
+set index_format="%4C %Z %[%F %T] %-15.15L (%4c) %M %s"
+
+
+#################################################################
+# Spam                                                          #
+#################################################################
+color index white magenta  "~h X-Bogosity:\\ Spam"
+color index white yellow "~h 'X-Bogosity: .*spamicity=0\.[89]'"
+color index white cyan "~h 'X-Bogosity: .*spamicity=0\.[67]'"
+color index white blue "~h 'X-Bogosity: .*spamicity=0\.[5]'"
+
+#################################################################
+# Aliases                                                       #
+#################################################################
+
+source ~/.config/mutt/alias
+set alias_file=~/.config/mutt/alias
+
+#################################################################
+# Local Settigs                                                 #
+#################################################################
+
+# for example:
+#
+# set from=mail@example.org
+# set realname="Joe User"
+# alternates juser@example.net juser@example.de
+# set spoolfile=~/mail/main
+# set record=~/mail/main
+#
+# fcc-hook '~f ^juser@example\.net$ '=other'
+# fcc-hook '~f ^mail@example\.org$ '=main'
+#
+# macro index \e1 ":set from=main@example.org\n" "Select main account."
+# macro index \e2 ":set from=juser@example.net\n" "Select other account."
+
+source ~/.muttrc.local
