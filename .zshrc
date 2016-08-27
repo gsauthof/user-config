@@ -35,6 +35,13 @@ PROMPT='%(!.%{$fg_bold[red]%}.%{$fg[green]%})%n%{$fg_no_bold[green]%}@%{$fg_bold
 # (same as `set -k` or `setopt interactivecomments`)
 setopt INTERACTIVE_COMMENTS
 
+# autopush, i.e. each cd acts like a `pushd`
+# e.g. cd -1 => go to the 2nd last directory on the stack
+# or echo =1 prints that directory
+DIRSTACKSIZE=8
+setopt autopushd pushdminus pushdsilent pushdtohome
+alias dh='dirs -v'
+
 . ~/.shrc
 [ -f ~/.zshrc.local ] && . ~/.zshrc.local
 
