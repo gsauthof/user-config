@@ -31,16 +31,24 @@ setopt prompt_subst
 PROMPT='%(!.%{$fg_bold[red]%}.%{$fg[green]%})%n%{$fg_no_bold[green]%}@%{$fg_bold[green]%}%m%{$fg_no_bold[green]%} %T %D Exit[%(?.%?.%{$fg_bold[red]%} %? :-( )%{$fg_no_bold[green]%}]
 %{$fg_bold[blue]%}%~ %{$fg_no_bold[green]%}%(!.#.$) %{$reset_color%}'
 
-# also allow # comments on the command line
-# (same as `set -k` or `setopt interactivecomments`)
-setopt INTERACTIVE_COMMENTS
-
 # autopush, i.e. each cd acts like a `pushd`
 # e.g. cd -1 => go to the 2nd last directory on the stack
 # or echo =1 prints that directory
 DIRSTACKSIZE=8
 setopt autopushd pushdminus pushdsilent pushdtohome
 alias dh='dirs -v'
+
+#################################################################
+# Other Options                                                 #
+#################################################################
+
+# usually disabled by default, but some systems have it enabled
+setopt noignoreeof
+
+# also allow # comments on the command line
+# (same as `set -k` or `setopt interactivecomments`)
+setopt INTERACTIVE_COMMENTS
+
 
 . ~/.shrc
 [ -f ~/.zshrc.local ] && . ~/.zshrc.local

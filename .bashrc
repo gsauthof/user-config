@@ -18,6 +18,9 @@
 # cf. http://unix.stackexchange.com/questions/105958/terminal-prompt-not-wrapping-correctly/167911#167911
 shopt -s checkwinsize
 
+# usually disabled by default, but some systems have it enabled
+unset IGNOREEOF
+
 #################################################################
 # History                                                       #
 #################################################################
