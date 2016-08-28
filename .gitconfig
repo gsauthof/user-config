@@ -9,6 +9,9 @@ parents = show -s --pretty=format:'%P'
 co      = checkout
 ci      = commit
 di      = diff --color-words
+lol     = log --graph --decorate --oneline
+# --all -> all the refs
+glog    = log --graph --decorate --all
 
 [push]
 default = simple
