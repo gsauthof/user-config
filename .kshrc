@@ -3,6 +3,6 @@
 # source this file
 # login ksh shells also source ~/.profile before this file
 
-. ~/.shrc
+source ~/.shrc
 
-[ -f ~/.kshrc ] && . ~/.kshrc.local
+[ -f ~/.kshrc.local ] && source ~/.kshrc.local

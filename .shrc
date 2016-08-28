@@ -64,13 +64,13 @@ alias zgrep='zgrep --color=auto'
 # Functions                                                     #
 #################################################################
 
-function mcd()
+function mcd
 {
   mkdir -p "$1" && cd "$1"
 }
 
 # set title of an X terminal
-function settitle()
+function settitle
 {
   print -n "\e]0;$1\a"
 }
