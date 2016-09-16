@@ -29,8 +29,8 @@ unset IGNOREEOF
 shopt -s histappend
 HISTFILE=~/.cache/bash_history
 HISTCONTROL=ignoredups:erasedups
-HISTSIZE=100000
-HISTFILESIZE=100000
+HISTSIZE=10000
+HISTFILESIZE=10000
 
 # emulate zsh history sharing feature
 # export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"

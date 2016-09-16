@@ -11,6 +11,9 @@ altscreen
 # default is the CWD
 hardcopydir $HOME/.screen/hardcopy
 
+# default scrollback buffer size (#lines)
+defscrollback 8192
+
 # use the grml status line
 # cf. http://git.grml.org/?p=grml-etc-core.git;a=blob;f=etc/grml/screenrc
 caption always "%{+b rk}$USER@%{wk}%H | %{yk}(load: %l |%{rk} cpu: %1` | %{Gk}net: %2`)  %-21=%{wk}%D %Y-%m-%d %0c"
