@@ -32,6 +32,7 @@ Example:
 
     $ cd
     $ git clone https://github.com/gsauthof/user-config.git config
+    $ git submodule update --init
     $ cd config
     $ dry=1 ./install.sh
 
@@ -46,3 +47,16 @@ some symlinks like the folowing:
     .gnupg/gpg.conf -> ../config/.gnupg/gpg.conf
     ...
 
+
+## Work Tree
+
+With a dotfiles repository, using an [external work tree][1] may
+look like an alternative to creating symbolic links. But this
+repository includes several submodules and Git doesn't support
+submodules in a repository with an external work tree:
+
+   fatal: /usr/libexec/git-core/git-submodule cannot be used
+   without a working tree.
+
+
+[1]: http://stackoverflow.com/questions/505467/can-i-store-the-git-folder-outside-the-files-i-want-tracked/26746068#26746068
