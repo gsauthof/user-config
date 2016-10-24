@@ -3,15 +3,20 @@
 # - an interactive shell, and
 # - a login shell
 #
-# after that file is sourced, bash will also read ~/.bash_login
-# and ~/.profile, if present
+# Bash will read one of [ ~/.bash_profile, ~/.bash_login , ~/.profile ],
+# whatever comes first.
 #
-# However, it will not read ~/.bashrc, on its own. This behavior
+# That means if this file is present then bash won't automatically
+# try to source ~/.bash_login nor ~/.profile, as well.
+#
+# Also, it will not read ~/.bashrc, on its own. This behavior
 # differs from e.g. ksh/zsh, where the profile and the rc files
 # are read by interactive login shells
 
-. ~/.bashrc
+. ~/.profile
 
 [ -f ~/.bash_profile.local ] && . ~/.bash_profile.local
+
+. ~/.bashrc
 
 true
