@@ -4,6 +4,11 @@
 " other items: addons
 set gui=none,tabs,bookmarks
 
+" apparently, the default (sl) can be very very slow
+" thus, set (s)earch-engines, (b)ookmarks and (h)istory instead
+" (l is similar to bh, but also does some 'intelligent' sorting)
+set complete=sbh
+
 " default runtimepath:
 " set runtimepath=~/.vimperator
 
