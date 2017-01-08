@@ -17,7 +17,12 @@ export PAGER=less
 # - ~/.cabal/bin - used by Haskell user install (cabal)
 # The 'Gretchenfrage' now is where to put those local paths - before
 # or after the systems ones.
-export PATH=~/local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:~/bin:~/.local/bin:~/.cabal/bin
+if [ -d /data/data/com.termux ] ; then
+  # on Android, with Termux, the default contains some non-standard locations
+  export PATH=~/local/bin:$PATH:~/bin:~/.local/bin:~/.cabal/bin
+else
+  export PATH=~/local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:~/bin:~/.local/bin:~/.cabal/bin
+fi
 
 # used e.g. by `texdoc`
 export PDFVIEWER=mupdf
