@@ -98,6 +98,15 @@ function create_links()
   done
 }
 
+function create_termux_links
+{
+  if [ '!' -f /data/data/com.termux/files/usr/bin/zsh ]; then
+    return
+  fi
+  mkdir -p "$HOME"/.termux
+  create_link /data/data/com.termux/files/usr/bin/zsh "$HOME"/.termux/shell
+}
+
 if git log -1 --pretty='%H' 163e4beaa9becfe42d797a83da5c3bb16db928d2 \
     > /dev/null 2>&1 \
     && [ -e .vimperatorrc ] ; then
@@ -114,6 +123,7 @@ EOF
 fi
 
 create_links
+create_termux_links
 
 # cf. https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 mkdir -p ~/.cache
