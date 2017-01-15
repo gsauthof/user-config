@@ -14,7 +14,14 @@ setopt SHARE_HISTORY
 bindkey -v
 # the one useful emacs-style key binding:
 bindkey '^R' history-incremental-search-backward
-# history-incremental-pattern-search-backward
+# variation - enables globbing/regex with incremental search:
+# bindkey '^R' history-incremental-pattern-search-backward
+
+# invoke external external when pressing v in "command-mode"
+# like in ksh/bash
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
 
 # Command completion
 zstyle :compinstall filename '$HOME/.zshrc'
