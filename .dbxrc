@@ -1,3 +1,10 @@
+# suppress note regarding `help changes`
+dbxenv suppress_startup_message 7.9
+
+# disable obnoxious UI default:
+# (dbx) Use `exit'
+# (dbx) exit
+set +o ignoreeof
 
 #################################################################
 # Aliases                                                      #
