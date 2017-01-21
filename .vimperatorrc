@@ -9,6 +9,10 @@ set gui=none,tabs,bookmarks
 " (l is similar to bh, but also does some 'intelligent' sorting)
 set complete=sbh
 
+" add alternative edit-in-external-editor mapping to work around
+" sites like stackoverflow that define Ctrl+I as action key ...
+inoremap <Leader>i <C-i>
+
 " default runtimepath:
 " set runtimepath=~/.vimperator
 
