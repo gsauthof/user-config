@@ -21,7 +21,17 @@ if [ -d /data/data/com.termux ] ; then
   # on Android, with Termux, the default contains some non-standard locations
   export PATH=~/local/bin:$PATH:~/bin:~/.local/bin:~/.cabal/bin
 else
-  export PATH=~/local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:~/bin:~/.local/bin:~/.cabal/bin
+  p=~/bin:~/.local/bin:~/.cabal/bin
+  for i in sbin bin; do
+    p=/usr/$i:$p
+    if [ $(ls -di /usr/$i/. /$i/. | tr -dc '[0-9\n]' | uniq | wc -l) = 2 ]; then
+      p=/$i:$p
+    fi
+    p=/usr/local/$i:$p
+  done
+  p=~/local/bin:$p
+  export PATH=$p
+  unset p
 fi
 
 # used e.g. by `texdoc`
