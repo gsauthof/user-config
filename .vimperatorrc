@@ -13,6 +13,10 @@ set complete=sbh
 " sites like stackoverflow that define Ctrl+I as action key ...
 inoremap <Leader>i <C-i>
 
+" quickly archive important pages
+"                 faster and more reliable than a JS bookmarklet
+map <F9> O<Home><Right><Right><Right><Right><Right>https://web.archive.org/save/<Enter>
+
 " default runtimepath:
 " set runtimepath=~/.vimperator
 
