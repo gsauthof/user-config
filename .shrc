@@ -7,6 +7,11 @@
 
 export CVS_RSH=ssh
 export EDITOR=vim
+# make it explicit such that older git versions don't use FRSX
+# (e.g. git 1.8.3.1 on CentOS 7), recent git versions like 2.9.3
+# default to FRX
+# where F: cat - if it fits, R: color, S: no-wrap, X: no term clear/restore
+export LESS=FR
 export NNTPSERVER=news.gmane.org
 export PAGER=less
 
