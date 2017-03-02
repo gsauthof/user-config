@@ -47,14 +47,8 @@ set print_command='f=`mktemp --tmpdir "$HOME"/.cache/mutt/`; muttprint -P A4 -p 
 ignore *
 unignore date return spam from to cc subject x-mailer user-agent resent-from reply-to bcc mailing-list posted-to organ X-Bogosity
 
-# wrappers lines shouldn't be marked with plus signs ...
-set markers=no
-set pager_index_lines=10
-
-
 # the default should be ok
 # set status_format="..."
-
 
 # display threads
 set sort=threads
@@ -65,6 +59,20 @@ set strict_threads=yes
 # message size, messages in a thread, subject
 set index_format="%4C %Z %[%F %T] %-15.15L (%4c) %M %s"
 
+#################################################################
+# Pager
+#################################################################
+
+# options for the builtin pager
+# wrappers lines shouldn't be marked with plus signs ...
+set markers=no
+set pager_index_lines=10
+
+# main advantage using an external pager:
+# in contrast to the builtin pager, multi-line URLs aren't split
+# interspersed with new-lines, anymore. Which breaks copy'n'paste ...
+set pager=vim
+set prompt_after=no
 
 #################################################################
 # Spam                                                          #
