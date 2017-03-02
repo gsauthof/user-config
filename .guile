@@ -1,0 +1,3 @@
+; Otherwise, Guile REPL has no line-editing/history
+(use-modules (ice-9 readline))
+(activate-readline)
