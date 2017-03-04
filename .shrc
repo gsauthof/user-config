@@ -29,7 +29,7 @@ else
   p=~/bin:~/.local/bin:~/.cabal/bin
   for i in sbin bin; do
     p=/usr/$i:$p
-    if [ $(ls -di /usr/$i/. /$i/. | tr -dc '[0-9\n]' | uniq | wc -l) = 2 ]; then
+    if [ $(ls -di /usr/$i/. /$i/. | tr -dc '[0-9]\n' | uniq | wc -l) = 2 ]; then
       p=/$i:$p
     fi
     p=/usr/local/$i:$p
@@ -51,6 +51,8 @@ export VISUAL=vim
 # locations.
 if [ $(uname -s) = "SunOS" ]; then
   export INFOPATH=/opt/csw/share/info
+  # Solaris CSW less even clears/restores when F is effective
+  export LESS=FRX
   export MANPATH=/opt/csw/man:/usr/man
   export PATH=~/local/bin:/usr/ccs/bin:/opt/csw/gnu:/opt/csw/bin:/usr/xpg6/bin:/usr/xpg4/bin:/usr/bin:~/bin:~/.local/bin:~/.cabal/bin
 fi
