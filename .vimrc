@@ -5,6 +5,9 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+" view man pages inside vim via :Man and \K
+runtime ftplugin/man.vim
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
