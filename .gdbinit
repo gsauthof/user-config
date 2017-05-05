@@ -7,3 +7,5 @@ set history save
 # if you use a debugger, you probably know what you are doing ...
 set confirm no
 
+# pretty print structures
+set print pretty on
