@@ -80,6 +80,7 @@ alias l.='ls -d .* --color=auto --time-style=long-iso'
 alias la='ls -A --color=auto --time-style=long-iso'
 alias ll='ls -l --color=auto --time-style=long-iso'
 alias ls='ls --color=auto --time-style=long-iso'
+alias octave='octave --no-gui -q'
 alias u='du -d1 -BM | sort -g'
 alias vi=vim
 alias zgrep='zgrep --color=auto'
