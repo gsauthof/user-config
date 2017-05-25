@@ -36,7 +36,7 @@ set header_cache=~/.cache/mutt/header_cache/
 set signature=$HOME/signature/make_sig.sh|
 
 set print=ask-yes
-set print_command='f=`mktemp -p "$HOME"/.cache/mutt`; muttprint -P A4 -p TO_FILE:"$f" && evince "$f" && rm "$f"'
+set print_command='set -e; f=$(mktemp -p "$HOME"/.cache/mutt); muttprint -P A4 -p TO_FILE:"$f"; evince "$f"; rm "$f"'
 
 
 #################################################################
