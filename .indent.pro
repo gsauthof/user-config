@@ -1,3 +1,1 @@
--nbad -bap -nbc -br -brs -c33 -cd33 -ncdb -ce -ci4 -cli0 -d0 -nfc1 -ip0
--l80 -lp -npcs -npsl -nsc -sob
--i2 -di0
+-linux -nut -i2
