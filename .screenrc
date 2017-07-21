@@ -9,7 +9,10 @@ startup_message off
 altscreen
 
 # default is the CWD
-hardcopydir $HOME/.screen/hardcopy
+hardcopydir $HOME/.cache/screen
+
+# exchange file (default: /tmp/screen-exchange)
+bufferfile $HOME/.cache/screen/exchange
 
 # default scrollback buffer size (#lines)
 defscrollback 8192

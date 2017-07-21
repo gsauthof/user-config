@@ -128,4 +128,4 @@ create_termux_links
 # cf. https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 mkdir -p ~/.cache
 chmod 700 ~/.cache/
-
+mkdir -p ~/.cache/screen
