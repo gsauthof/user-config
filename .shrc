@@ -105,6 +105,14 @@ function settitle
 # Misc                                                          #
 #################################################################
 
-# umask 077
+# Paranoid umask
+#umask 077
+
+# Umask optimal for user private groups
+# cf. https://unix.stackexchange.com/q/153390/1131
+#umask 002
+
+# Good default umask
+umask 022
 
 [ -f ~/.shrc.local ] && . ~/.shrc.local
