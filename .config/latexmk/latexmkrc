@@ -1,0 +1,8 @@
+# latexmk example invocation (preview continuously):
+#
+#     $ latexmk -pdf -pvc doc.tex
+#
+
+$pdf_previewer = 'mupdf';
+# update via $pdf_update_signal, i.e. SIGHUP
+$pdf_update_method = 2;
