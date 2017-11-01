@@ -1,0 +1,8 @@
+# must be placed/linked in the project directory or in one of its ancestor
+# directories, clang-format doesn't fallback to $HOME
+---
+Language: Cpp
+IndentWidth: 2
+NamespaceIndentation: All
+AccessModifierOffset: 0
+# TODO https://stackoverflow.com/questions/41022954/how-to-indent-after-access-modifiers-with-clang-format
