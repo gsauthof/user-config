@@ -1,0 +1,22 @@
+/* Low-level configuration settings for Firefox 57+ */
+
+/* Has to be linked from the actual firefox profile directory.  */
+/* For example from: ~/.mozilla/firefox/abcd1234.default/chrome */
+
+/* ************************************************************ */
+/* * Tree Style Tab Addon related Settings                    * */
+/* ************************************************************ */
+
+/* cf. https://github.com/piroor/treestyletab */
+
+/* Hide the horizontal tab bar */
+/* https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#hide-horizontal-tabs-at-the-top-of-the-window-1349 */
+#TabsToolbar {
+  visibility: collapse !important;
+}
+
+/* Hide the sidebar header when displaying tree style tabs */
+/* https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#for-only-tree-style-tab-sidebar-1397 */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  display: none;
+}
