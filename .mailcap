@@ -1,0 +1,24 @@
+# xdg-open does more harm than it helps
+#
+# In many environments it calls a helper that yields a
+# race-condition between viewer start and temporary file deletion:
+#
+# https://bugzilla.redhat.com/show_bug.cgi?id=653249
+#
+# A possible work-around is to use copiousoutput. The output
+# isn't really copious but this delays the deletion until the
+# user exits the pager
+# application/pdf; /usr/bin/xdg-open %s ; copiousoutput
+#
+# Better approach, just eliminate the xdg-open call:
+#
+application/pdf; evince %s
+
+# pandoc is probably better maintained and more secure than:
+#
+#     elinks %s -dump -dump-color-mode 0 -dump-charset utf-8
+#
+# Links (`links %s -dump`) isn't really a good option as it
+# doesn't include the href content of `<a>` elements.
+#
+text/html; pandoc -f html-native_divs-native_spans - -t markdown ; copiousoutput
