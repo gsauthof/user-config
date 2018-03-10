@@ -51,7 +51,7 @@ unignore date return spam from to cc subject x-mailer user-agent resent-from rep
 # set status_format="..."
 
 # display threads
-set sort=threads
+set sort=reverse-threads
 # don't group messages into threads with same subject but without references
 set strict_threads=yes
 
@@ -88,10 +88,10 @@ set mailcap_path = ~/.mailcap
 #################################################################
 # Spam                                                          #
 #################################################################
-color index white magenta  "~h X-Bogosity:\\ Spam"
-color index white yellow "~h 'X-Bogosity: .*spamicity=0\.[89]'"
-color index white cyan "~h 'X-Bogosity: .*spamicity=0\.[67]'"
-color index white blue "~h 'X-Bogosity: .*spamicity=0\.[5]'"
+#color index white magenta  "~h X-Bogosity:\\ Spam"
+#color index white yellow "~h 'X-Bogosity: .*spamicity=0\.[89]'"
+#color index white cyan "~h 'X-Bogosity: .*spamicity=0\.[67]'"
+#color index white blue "~h 'X-Bogosity: .*spamicity=0\.[5]'"
 
 #################################################################
 # Aliases                                                       #
