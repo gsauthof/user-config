@@ -4,30 +4,43 @@
 !
 ! or
 !     xrdb -load ~/.Xresources
+!
+! Some systems automatically load this file during login,
+! Fedora 27 with wayland does not (cf. ~/.config/autostart/xrdb.desktop).
+!
+! class names: XTerm and VT100
+! instance names: xterm and vt100 (cf. xterm -name $instance_name)
+! a resource with . has priority over one with * (where all components match)
 
-xterm*scrollBar: false
-xterm*toolBar:            false
-xterm*geometry:           80x60
+XTerm*scrollBar: false
+XTerm*toolBar:   false
+XTerm*geometry:  80x60
 
 
-xterm*saveLines: 8192
+XTerm*saveLines:       8192
 XTerm*scrollTtyOutput: false
-XTerm*scrollKey: true
+XTerm*scrollKey:       true
 
 
 ! xterm*cursorColor: red
 
 ! this is also the default
-xterm*reverseVideo: false
+XTerm*reverseVideo: false
 ! green
-xterm*foreground: #00ff00
-xterm*background: #000000
-
+XTerm*foreground:   #00ff00
+XTerm*background:   #000000
 
 
 ! fix double/tripple click select behaviour
-XTerm*VT100.cutNewLine: false
+XTerm*VT100.cutNewLine:           false
 XTerm*VT100.cutToBeginningOfLine: false
 ! maps character code ranges (ASCII/UTF-8 ...) to values
 ! same value -> same class
 XTerm*VT100.charClass: 33:48,35:48,37:48,42:48,45-47:48,64:48,95:48,126:48
+
+! Configure the same copy'n'paste clipboard shortcuts as in VTE based terms
+! like GNOME terminal
+XTerm*VT100.translations:    #override                   \n\
+         Shift Ctrl <Key>C:  copy-selection(CLIPBOARD)   \n\
+         Shift Ctrl <Key>V:  insert-selection(CLIPBOARD) \n\
+         Shift Ctrl <Key>N:  spawn-new-terminal()

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=xrdb -load .Xresources
+Name=xrdb
+Comment=load all the X resources
+Terminal=false
+OnlyShowIn=GNOME
+Type=Application
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
