@@ -13,6 +13,7 @@
 # Better approach, just eliminate the xdg-open call:
 #
 application/pdf; evince %s
+application/x-pdf; evince %s
 
 # pandoc is probably better maintained and more secure than:
 #
