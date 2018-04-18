@@ -30,6 +30,8 @@ XTerm*reverseVideo: false
 XTerm*foreground:   #00ff00
 XTerm*background:   #000000
 
+XTerm.VT100.faceName: mono:size=9
+
 
 ! fix double/tripple click select behaviour
 XTerm*VT100.cutNewLine:           false
