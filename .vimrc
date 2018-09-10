@@ -95,6 +95,10 @@ let g:lhs_markup="none"
 " TeX
 let g:tex_comment_nospell=1
 
+" cf. https://github.com/tpope/vim-markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'c', 'cpp']
+
 au FileType text,markdown,tex setlocal tw=65
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
