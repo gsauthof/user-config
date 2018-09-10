@@ -4,6 +4,8 @@
 - Align - old school alignment helper, e.g. `Align =`
 - cpp-vim - better syntax highlighting for C++11
 - ingo-library - SyntaxRange dependency
+- Recover.vim - auto-delete old swap-files without changes,
+  show nice diff otherwise
 - SyntaxRange - use different syntax highlighting in some regions
 - tabular - modern tabulation, e.g. `Tab /=`
 - vim-commentary - comment out stuff, e.g. `gcc`, `gc`, `gcgc`,
