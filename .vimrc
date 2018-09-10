@@ -59,6 +59,9 @@ imap <F9> <Esc><F9>
 " same effect as -X; helps against extreme startup-delays; see :help -X
 set clipboard=exclude:.*
 
+" cf. https://github.com/chrisbra/Recover.vim/issues/46
+let g:RecoverPlugin_Delete_Unmodified_Swapfile=1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Synatx and Colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
