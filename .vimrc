@@ -27,7 +27,7 @@ let g:colors_name="ron"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set shiftwidth=2
+set shiftwidth=4
 " set ts=2 " tabstop: show tabs as 2 spaces instead of 8 - bad
 set expandtab " use spaces, insert tabs in i-mode: CTRL-V TAB
 
