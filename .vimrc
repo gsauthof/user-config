@@ -120,6 +120,9 @@ au FileType xsd setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
 " customize the vim-commentary plugin:
 autocmd FileType cmake setlocal commentstring=#\ %s
+" https://github.com/tpope/vim-commentary/issues/15
+" https://github.com/tpope/tpope/blob/master/.vimrc
+autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spell checking
