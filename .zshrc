@@ -24,6 +24,7 @@ zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
 # Command completion
+fpath=(~/.config/zsh/function $fpath)
 zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
 compinit
