@@ -1,1 +1,7 @@
 bind -v
+
+# Re-enable some shortcuts which are disabled in Vi-mode
+# Tab completion
+bind ^I rl_complete
+# Incremental reverse search
+bind ^R em-inc-search-prev
