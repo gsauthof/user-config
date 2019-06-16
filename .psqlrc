@@ -1,0 +1,51 @@
+-- cf. https://www.postgresql.org/docs/10/app-psql.html
+
+-- Use Unicode code points to construct table borders
+\pset linestyle unicode
+
+-- Disable vertical borders
+\pset border 0
+
+-- Display NULL as
+\pset null ∅
+
+-- print timing for each statement
+\timing on
+
+\set HISTCONTROL ignoreboth
+\set HISTSIZE 10000
+-- store the history for each DB separately
+\set HISTFILE ~/.cache/psql_history- :DBNAME
+
+-- default PROMPT1 %/%R%#
+-- %/ current DB
+-- %R signal different modes, e.g. single-line mode
+-- %# signal user/super-user session
+-- %x signal transaction status
+-- %n session user name
+-- %[...%] enclose escape sequences
+--\set PROMPT1 '%n@%/[%x]%R%# '
+-- with colors
+\set PROMPT1 '%[%033[0;32m%]%n@%[%033[1;34m%]%/%[%033[0;32m%][%x]%R%#%[%033[0m%] '
+
+-- cf. https://wiki.postgresql.org/wiki/Disk_Usage
+-- slightly modified, invoke with :du
+select $$SELECT *, pg_size_pretty(total_bytes) AS total
+    , pg_size_pretty(index_bytes) AS INDEX
+    , pg_size_pretty(toast_bytes) AS toast
+    , pg_size_pretty(table_bytes) AS TABLE
+  FROM (
+  SELECT *, total_bytes-index_bytes-COALESCE(toast_bytes,0) AS table_bytes FROM (
+      SELECT c.oid,nspname AS table_schema, relname AS TABLE_NAME
+              , c.reltuples AS row_estimate
+              , pg_total_relation_size(c.oid) AS total_bytes
+              , pg_indexes_size(c.oid) AS index_bytes
+              , pg_total_relation_size(reltoastrelid) AS toast_bytes
+          FROM pg_class c
+          LEFT JOIN pg_namespace n ON n.oid = c.relnamespace
+          WHERE relkind = 'r'
+            AND nspname = 'public'
+  ) a
+) a
+ORDER BY total_bytes;$$ AS du \gset
+
