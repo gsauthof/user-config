@@ -33,7 +33,7 @@ HISTSIZE=10000
 HISTFILESIZE=10000
 
 # emulate zsh history sharing feature
-# export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+# PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 
 #################################################################
