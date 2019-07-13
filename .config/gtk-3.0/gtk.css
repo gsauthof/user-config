@@ -1,0 +1,14 @@
+
+
+decoration {
+    /* When using Gnome Terminal under CentOS 7 with a dark background theme,
+       there are no visible window borders.
+       Which is tedious when having two terminal windows
+       side-by-side/overlapping.
+       Thus, this gives us some nice ergonomic window borders. */
+    border: 2px solid darkgreen;
+
+    /* probably doesn't make much of a difference */
+    /* background: gray; */
+}
+
