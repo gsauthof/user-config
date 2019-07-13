@@ -62,6 +62,12 @@ set clipboard=exclude:.*
 " cf. https://github.com/chrisbra/Recover.vim/issues/46
 let g:RecoverPlugin_Delete_Unmodified_Swapfile=1
 
+" there is an impressive history of code-execution/DoS vulnerabilities related
+" to vi/vim modelines
+" (cf.  https://security.stackexchange.com/questions/36001/vim-modeline-vulnerabilities)
+" Thus, it's a good idea to close this target surface, for good.
+set nomodeline
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Synatx and Colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
