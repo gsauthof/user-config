@@ -82,6 +82,18 @@ user_pref("network.predictor.enabled", false);
 // disable internationalized domains, cf. punycode
 user_pref("network.enableIDN", false);
 
+// How many closed windows Firefox remembers under
+// History -> Recently Closed Windows
+// The default of 3 windows is too small
+// (scenario: you have one important window and 3 unimportant ones,
+//    you close the important one first, then realize that there are 3 left,
+//    you close them as well, after restart you realize that you should have quit
+//    Firefox with Ctrl+Q instead because that would have let you to
+//    restore the session with all windows, but now the important window
+//    can't be restored, anymore ...)
+user_pref("browser.sessionstore.max_windows_undo", 10);
+
+
 // legacy
 // security.enable_java false
 // security.warn_viewing_mixed false
