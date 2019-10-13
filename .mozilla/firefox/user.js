@@ -93,6 +93,11 @@ user_pref("network.enableIDN", false);
 //    can't be restored, anymore ...)
 user_pref("browser.sessionstore.max_windows_undo", 10);
 
+// Keep checking for and loading chrome/{userChrome.css,userContent.css}
+// (default changed from true to false in Firefox 69)
+// cf. https://bugzilla.mozilla.org/show_bug.cgi?id=1541233
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+
 
 // legacy
 // security.enable_java false
