@@ -68,9 +68,16 @@ alias synch='history -a; history -c; history -r'
 # re-execute last command - defined by zsh, by default
 alias r='fc -s'
 
+#################################################################
+# Source additional shell config files                          #
+#################################################################
+
+# maintain a directory stack with a `cd -N` and `dh` command
+. ~/.config/bash/dh.sh
+
 . ~/.shrc
 
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
 
+# Make sure that the first exit status displayed in the prompt is success
 true
-
