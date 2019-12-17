@@ -101,6 +101,16 @@ function settitle
   print -n "\e]0;$1\a"
 }
 
+# curl with some sane defaults
+# while disollowing downgrades when fetching over https
+function curls
+{
+    local flags=(--silent --show-error --fail -L)
+    if [[ "$*" =~ https:// ]]; then
+        flags+=(--proto-redir '=https')
+    fi
+    curl "${flags[@]}" "$@"
+}
 
 #################################################################
 # Misc                                                          #
