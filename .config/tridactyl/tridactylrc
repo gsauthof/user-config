@@ -1,0 +1,15 @@
+" for this file being automatically read by the Tridactyl Firefox Addon
+" the Traidactyl 'native messenger' must be installed
+" cf. https://github.com/tridactyl/tridactyl/wiki/Exemplar-.tridactylrc-files
+
+
+" use better search key bindings
+" cf. https://github.com/tridactyl/tridactyl/issues/64#issuecomment-496913151
+"
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind n findnext 1
+bind N findnext -1
+bind ,<Space> nohlsearch
+
+
