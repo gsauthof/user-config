@@ -9,6 +9,8 @@ setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
+# don't include commands into the history that start with a blank
+setopt HIST_IGNORE_SPACE
 
 # vi-style key bindings
 bindkey -v
