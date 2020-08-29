@@ -165,13 +165,14 @@ map <F4> :FSHere<CR>
 if has("cscope")
   cs reset " in case /etc/vimrc already added some databases
   set csverb
+  " as of 2020 loaded by default?
   " add any database in current directory
-  if filereadable("cscope.out")
-    cs add cscope.out
-  " else add database pointed to by environment
-  elseif $CSCOPE_DB != ""
-    cs add $CSCOPE_DB
-  endif
+"  if filereadable("cscope.out")
+"    cs add cscope.out
+"  " else add database pointed to by environment
+"  elseif $CSCOPE_DB != ""
+"    cs add $CSCOPE_DB
+"  endif
   set cst "cscopetag
 
   " keymappings for additional searches (besides the Ctrl+] one)
