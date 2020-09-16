@@ -27,3 +27,4 @@ text/html; pandoc -f html-native_divs-native_spans - -t markdown ; copiousoutput
 # Use the 'eye-of-gnome' to view images
 image/jpeg; eog %s
 image/jpg; eog %s
+image/png; eog %s
