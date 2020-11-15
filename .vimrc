@@ -82,7 +82,7 @@ set matchpairs=(:),{:},[:],<:>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set ruler "show cursor position in status bar
 set laststatus=2 " always display a status line
-set statusline=%-15f\ %8(%3m\ %4r%)\ %3q\ %2n\ %5l:%-3c\ [off:\ %6o]\ (%3p\%%\ of\ %5L\ l)\ %{fugitive#statusline()}
+set statusline=%-15f\ %8(%3m\ %4r%)\ %3q\ %2n\ %5l:%-3c\ [off:\ %6o]\ (%3p\%%\ of\ %5L\ l)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
