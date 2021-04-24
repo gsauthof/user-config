@@ -74,7 +74,11 @@ set pager_index_lines=10
 # main advantage using an external pager:
 # in contrast to the builtin pager, multi-line URLs aren't split
 # interspersed with new-lines, anymore. Which breaks copy'n'paste ...
-set pager=vim
+#set pager=vim
+#
+# However, using an external pager is also annoying as this
+# removes integrated navigation.
+
 set prompt_after=no
 
 #################################################################
