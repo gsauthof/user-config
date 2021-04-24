@@ -112,6 +112,7 @@ au FileType text,markdown,tex setlocal tw=65
 
 " vim-go auto-formats on file save, by default
 let g:go_fmt_autosave = 0
+let g:go_mod_fmt_autosave = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " XML Stuff
