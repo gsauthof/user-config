@@ -59,6 +59,8 @@ setopt noignoreeof
 # (same as `set -k` or `setopt interactivecomments`)
 setopt INTERACTIVE_COMMENTS
 
+alias icat='kitty +kitten icat'
+
 
 . ~/.shrc
 [ -f ~/.zshrc.local ] && . ~/.zshrc.local
