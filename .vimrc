@@ -21,8 +21,9 @@ runtime ftplugin/man.vim
 " relies on another script doing something similar to
 " if g:colors_name then colorscheme g:colors_name
 " works on Fedora 23
-let g:colors_name="ron"
+" let g:colors_name="ron"
 " let g:colors_name="desert"
+let g:colors_name="murphy"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab Stuff
