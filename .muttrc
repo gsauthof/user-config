@@ -33,7 +33,9 @@ set header_cache=~/.cache/mutt/header_cache/
 set signature=$HOME/signature/make_sig.sh|
 
 set print=ask-yes
-set print_command='set -e; f=$(mktemp -p "$HOME"/.cache/mutt); muttprint -P A4 -p TO_FILE:"$f"; evince "$f"; rm "$f"'
+# evince can also read .ps files, but the ps2pdf conversion works around
+# interoperability issues when printing with a Kyocera FS-C5100DN (on f35)
+set print_command='set -e; f=$(mktemp -p "$HOME"/.cache/mutt); g=$(mktemp -p "$HOME"/.cache/mutt); muttprint -P A4 -p TO_FILE:"$f"; ps2pdf "$f" "$g"; evince "$g"; rm "$f" "$g"'
 
 
 #################################################################
