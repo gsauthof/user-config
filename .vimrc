@@ -2,11 +2,12 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 " old method:
 " call pathogen#infect()
-syntax on
+
 filetype plugin indent on
 
 " view man pages inside vim via :Man and \K
 runtime ftplugin/man.vim
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
@@ -17,13 +18,30 @@ runtime ftplugin/man.vim
 " than when called interactively:
 " colorscheme ron
 " colorscheme desert
+colorscheme murphy
+
+" Borland/Turbo Pascal/C IDE or Norton Commander style colors
+" still are borderline awesome:
+" colorscheme darkblue
 
 " relies on another script doing something similar to
 " if g:colors_name then colorscheme g:colors_name
-" works on Fedora 23
+" - works on Fedora 23
+" - not required on Fedora 37, when `syntax on` is ordered next
 " let g:colors_name="ron"
 " let g:colors_name="desert"
-let g:colors_name="murphy"
+" let g:colors_name="murphy"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntax
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" must be ordered after selecting a colorschmeme!
+syntax on
+
+set matchpairs=(:),{:},[:],<:>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab Stuff
@@ -69,14 +87,6 @@ let g:RecoverPlugin_Delete_Unmodified_Swapfile=1
 " Thus, it's a good idea to close this target surface, for good.
 set nomodeline
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Synatx and Colors
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Comment ctermfg=2           " green
-hi String  ctermfg=3           " yellow
-hi PreProc ctermfg=9 ctermbg=5 " white on magenta
-
-set matchpairs=(:),{:},[:],<:>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusbar
