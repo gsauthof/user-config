@@ -98,6 +98,16 @@ user_pref("browser.sessionstore.max_windows_undo", 10);
 // cf. https://bugzilla.mozilla.org/show_bug.cgi?id=1541233
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
+// click to play
+// i.e. disables mouse-over/scroll auto-play
+// cf. https://wiki.mozilla.org/Media/block-autoplay
+user_pref("media.autoplay.blocking_policy", 2);
+
+// don't auto-play audio/video/muted video, by default
+// cf. https://utcc.utoronto.ca/~cks/space/blog/web/FirefoxMediaAutoplaySettingsIII
+user_pref("media.autoplay.default", 5);
+
+
 
 // legacy
 // security.enable_java false
