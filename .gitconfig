@@ -19,6 +19,16 @@ default = simple
 [init]
 defaultBranch = master
 
+[merge]
+# <<<<<<<
+# one side
+# |||||||
+# original text
+# =======
+# other side
+# >>>>>>>
+conflictStyle = diff3
+
 # define user/{email,name} in very user specific
 # dotfile (where the path is relative to the origin
 # of this file)
