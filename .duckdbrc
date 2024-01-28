@@ -1,0 +1,5 @@
+# enable linenoise multiline editing mode
+.multiline on
+
+# time each statement
+.timer on
