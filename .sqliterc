@@ -1,0 +1,11 @@
+
+-- set cache size to 256 MiB
+-- the negative sign switches to KiB unit ... (instead of #pages)
+pragma cache_size = -262144;
+
+-- pretty print tables
+.mode box --wrap 32 --wordwrap on
+.headers on
+
+-- benchmark statement execution
+.timer on
