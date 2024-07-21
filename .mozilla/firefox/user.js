@@ -74,6 +74,15 @@ user_pref("datareporting.policy.dataSubmissionEnabled", false);
 // also disable local collection
 // user_pref("toolkit.telemetry.enabled", false);
 
+
+// Disable ridiculous tracking for advertisers ('adtech') feature Firefox
+// introduced in version 128
+// cf. newspeak announcement: https://support.mozilla.org/en-US/kb/privacy-preserving-attribution
+// https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/42687
+// https://utcc.utoronto.ca/~cks/space/blog/web/FirefoxStaticPrefsSystem
+user_pref("dom.private-attribution.submission.enabled", false);
+
+
 // disable proactive DNS requests for domain names you haven't requested (yet)
 // i.e. which may unnecessarily leak sensitive information
 user_pref("network.dns.disablePrefetch", true);
