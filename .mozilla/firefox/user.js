@@ -50,6 +50,12 @@ user_pref("privacy.trackingprotection.enabled", true);
 // choose what to block, i.e. Trackers and Cookies - in all windows
 user_pref("browser.contentblocking.category", "custom");
 
+// reduce cookie banners
+// 1: reject; 2: reject and fall back to accept
+// cf. https://github.com/mozilla/cookie-banner-rules-list
+user_pref("cookiebanners.service.mode", 2);
+user_pref("cookiebanners.service.mode.privateBrowsing", 1);
+
 // we don't want to give Mozilla a carte blanche for installing
 // any addon they feel like without further opt-in
 // yes, it's enabled, by default, in Firefox 57
