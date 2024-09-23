@@ -81,6 +81,12 @@ user_pref("datareporting.policy.dataSubmissionEnabled", false);
 // user_pref("toolkit.telemetry.enabled", false);
 
 
+// disable sending location to mozilla servers periodically for
+// displaying sponsored weather service ads
+user_pref("browser.newtabpage.activity-stream.feeds.weatherfeed", false);
+user_pref("browser.newtabpage.activity-stream.showWeather", false);
+
+
 // Disable ridiculous tracking for advertisers ('adtech') feature Firefox
 // introduced in version 128
 // cf. newspeak announcement: https://support.mozilla.org/en-US/kb/privacy-preserving-attribution
