@@ -1,3 +1,5 @@
+# NB: cf. .config/git/ignore for global ignores
+
 [color]
 diff        = auto
 status      = auto
@@ -14,10 +16,25 @@ lol     = log --graph --decorate --oneline
 glog    = log --graph --decorate --all
 
 [push]
-default = simple
+# push the current branch and use same name, remotely
+default    = simple
+# implicitly push all local tags with a normal push
+# (instead of explicitly adding `--folow-tags`
+#  or following up with `git push --tags`)
+followTags = true
 
 [init]
 defaultBranch = master
+
+
+[diff]
+# use modern improved algorithm
+algorithm      = histogram
+# color moved lines differently
+colorMoved     = plain
+# use (i)ndex, (w)ork, (c)ommit and (o)bject prefixes in the diff header
+# (instead of a and b)
+mnemonicPrefix = true
 
 [merge]
 # <<<<<<<
@@ -28,6 +45,15 @@ defaultBranch = master
 # other side
 # >>>>>>>
 conflictStyle = diff3
+
+
+[branch]
+# sort branches by committerdate, descending
+sort = -committerdate
+
+[tag]
+sort = version:refname
+
 
 # define user/{email,name} in very user specific
 # dotfile (where the path is relative to the origin
