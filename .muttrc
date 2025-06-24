@@ -3,6 +3,9 @@
 # Basic Settings                                                #
 #################################################################
 
+# always ask to confirm quitting - not just when there are deleted messages ...
+set quit=ask-yes
+
 # for re-sourcing the rc file in a running mutt
 macro index \Ch ":source ~/.muttrc\n" "Source .muttrc."
 
