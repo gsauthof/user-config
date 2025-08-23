@@ -146,9 +146,3 @@ user_pref("browser.tabs.groups.smart.optin"       , false);
 user_pref("browser.tabs.groups.smart.userEnabled" , false);
 
 
-
-
-// legacy
-// security.enable_java false
-// security.warn_viewing_mixed false
-
