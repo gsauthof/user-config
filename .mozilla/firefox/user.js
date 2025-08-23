@@ -129,6 +129,24 @@ user_pref("media.autoplay.blocking_policy", 2);
 user_pref("media.autoplay.default", 5);
 
 
+// disable 'AI' crap
+// cf. https://firefox-source-docs.mozilla.org/toolkit/components/ml/
+// https://firefox-source-docs.mozilla.org/toolkit/components/ml/extensions.html
+// https://www.omgubuntu.co.uk/2025/08/firefox-high-cpu-usage-inference-disable
+// https://www.omgubuntu.co.uk/2025/04/firefox-nightly-introduces-experimental-link-previews-with-ai-summary
+user_pref("browser.ml.chat.enabled"               , false);
+user_pref("browser.ml.chat.shortcuts"             , false);
+user_pref("browser.ml.chat.shortcuts.custom"      , false);
+user_pref("browser.ml.chat.sidebar"               , false);
+user_pref("browser.ml.enable"                     , false);
+user_pref("browser.ml.linkPreview.enabled"        , false);
+user_pref("extensions.ml.enabled"                 , false);
+user_pref("browser.tabs.groups.smart.enabled"     , false);
+user_pref("browser.tabs.groups.smart.optin"       , false);
+user_pref("browser.tabs.groups.smart.userEnabled" , false);
+
+
+
 
 // legacy
 // security.enable_java false
