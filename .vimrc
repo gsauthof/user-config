@@ -103,6 +103,10 @@ set foldmethod=marker
 " open files with all folds opened
 " set foldlevelstart=99
 
+" except for Python
+au FileType python setlocal foldmethod=syntax
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Filetype Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
