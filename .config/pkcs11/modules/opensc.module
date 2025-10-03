@@ -1,0 +1,10 @@
+# cf. pkcs11.conf(5)
+
+# copied from /usr/share/p11-kit/modules/opensc.module
+module: opensc-pkcs11.so
+
+# work around by Firefox/Chromium resetting PIN cache of yubikey
+# during https browsing since it auto-discovers the yubikey
+# and invokes piv functions on each page visit, it seems
+# comment-out when there is actually a need to use PIV in the browser
+disable-in: firefox chromium chromium-browser
