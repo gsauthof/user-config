@@ -163,3 +163,11 @@ user_pref("browser.tabs.groups.smart.userEnabled" , false);
 // improve usability of scrollbars
 user_pref("widget.gtk.overlay-scrollbars.enabled"   , false);
 user_pref("layout.css.scrollbar-width-thin.disabled", true );
+
+// disable automatically filling in credit card and payment methods
+user_pref("extensions.formautofill.creditCards.enabled", false);
+// disable screenshot feature
+user_pref("screenshots.browser.component.enabled", false);
+
+
+
