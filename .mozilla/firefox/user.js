@@ -92,6 +92,13 @@ user_pref("datareporting.policy.dataSubmissionEnabled", false);
 // displaying sponsored weather service ads
 user_pref("browser.newtabpage.activity-stream.feeds.weatherfeed", false);
 user_pref("browser.newtabpage.activity-stream.showWeather", false);
+// disable more sponsored stuff
+user_pref("browser.newtabpage.activity-stream.showSearch"               , false);
+user_pref("browser.newtabpage.activity-stream.showSponsored"            , false);
+user_pref("browser.newtabpage.activity-stream.showSponsoredCheckboxes"  , false);
+user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites"    , false);
+user_pref("browser.newtabpage.activity-stream.feeds.topsites"           , false);
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories" , false);
 
 
 // Disable ridiculous tracking for advertisers ('adtech') feature Firefox
