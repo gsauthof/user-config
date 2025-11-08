@@ -46,6 +46,13 @@ user_pref("privacy.donottrackheader.enabled", false);
 user_pref("privacy.trackingprotection.enabled", true);
 // disable display of the tracking-protection tour in fresh firefox installs
 // privacy.trackingprotection.introCount 20
+// disable exceptions to tracking protection
+// according to mozilla these 'exceptions [are] required to avoid major website breakage'
+// however, after years of usage the author of this file didn't notice any breakage,
+// thus, keeping those exceptions disabled
+user_pref("privacy.trackingprotection.allow_list.baseline.enabled"    , false);
+user_pref("privacy.trackingprotection.allow_list.convenience.enabled" , false);
+
 
 // choose what to block, i.e. Trackers and Cookies - in all windows
 user_pref("browser.contentblocking.category", "custom");
