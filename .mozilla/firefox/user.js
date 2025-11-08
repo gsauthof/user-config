@@ -160,3 +160,6 @@ user_pref("browser.tabs.groups.smart.optin"       , false);
 user_pref("browser.tabs.groups.smart.userEnabled" , false);
 
 
+// improve usability of scrollbars
+user_pref("widget.gtk.overlay-scrollbars.enabled"   , false);
+user_pref("layout.css.scrollbar-width-thin.disabled", true );
