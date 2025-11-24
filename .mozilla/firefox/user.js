@@ -179,4 +179,6 @@ user_pref("extensions.formautofill.creditCards.enabled", false);
 user_pref("screenshots.browser.component.enabled", false);
 
 
+// don't send metadata of downloaded binary files to google ...
+user_pref("browser.safebrowsing.downloads.remote.enabled", false);
 
