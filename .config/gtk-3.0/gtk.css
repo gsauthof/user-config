@@ -12,3 +12,12 @@ decoration {
     /* background: gray; */
 }
 
+
+/* increase scrollbar width */
+scrollbar, scrollbar button, scrollbar slider {
+  -GtkScrollbar-has-backward-stepper: true;
+  -GtkScrollbar-has-forward-stepper: true;
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 0;
+}
