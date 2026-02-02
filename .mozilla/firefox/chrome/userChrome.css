@@ -20,3 +20,10 @@
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
   display: none;
 }
+
+
+/* Hide 'Search google for ...' from context menu */
+#context-searchselect {
+    display: none !important;
+}
+

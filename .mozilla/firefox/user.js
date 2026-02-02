@@ -25,6 +25,9 @@ user_pref("browser.download.useDownloadDir", false);
 user_pref("browser.fixup.alternate.enabled", false);
 // disable search suggestions while typing the search query
 user_pref("browser.search.suggest.enabled", false);
+// disable: 'Show search terms in the address bar on results pages'
+user_pref("browser.urlbar.showSearchTerms.enabled", false);
+
 user_pref("browser.startup.homepage", "about:blank");
 // restore previous session on startup (instead of showing a blank-/homepage)
 user_pref("browser.startup.page", 3);
@@ -165,6 +168,7 @@ user_pref("browser.tabs.groups.smart.optin"       , false);
 user_pref("browser.tabs.groups.smart.userEnabled" , false);
 user_pref("browser.urlbar.quicksuggest.mlEnabled" , false);
 user_pref("browser.urlbar.yelp.mlEnabled"         , false);
+// disable 'Search image with google lens' from context menu
 user_pref("browser.search.visualSearch.featureGate", false);
 user_pref("sidebar.notification.badge.aichat"     , false);
 user_pref("pdfjs.enableGuessAltText"              , false);
