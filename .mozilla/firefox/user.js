@@ -188,3 +188,10 @@ user_pref("screenshots.browser.component.enabled", false);
 // don't send metadata of downloaded binary files to google ...
 user_pref("browser.safebrowsing.downloads.remote.enabled", false);
 
+// disable pdfjs completely as setting application/pdf action to 'Save File'
+// seems to be the only way to stop auto-downloading inline pdf files
+// to ~/Desktop and there doesn't seem to be a way
+// to use pdfjs on selected pdf files, anyways.
+user_pref("pdfjs.disabled", true);
+
+
