@@ -75,8 +75,11 @@ imap <F9> <Esc><F9>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" same effect as -X; helps against extreme startup-delays; see :help -X
-set clipboard=exclude:.*
+" same effect as -X; helps against extreme startup-delays
+" see :help -X, :help 'clipboard' and :help clipboard-exclude
+if has('clipboard')
+    set clipboard=exclude:.*
+endif
 
 " cf. https://github.com/chrisbra/Recover.vim/issues/46
 let g:RecoverPlugin_Delete_Unmodified_Swapfile=1
