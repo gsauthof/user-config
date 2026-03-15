@@ -1,18 +1,43 @@
 
 #################################################################
+# Key bindings
+#################################################################
+
+bind index,pager           ?        search-reverse
+bind index,pager           N        search-opposite
+bind attach,index,pager    <F1>     help
+bind attach,index          g        first-entry
+bind attach,index          G        last-entry
+bind pager                 g        top
+bind pager                 G        bottom
+# NB: in the index j/k are bound to next/previous-entry, by default
+bind pager                 j 	    next-line
+bind pager                 k        previous-line
+bind pager                 h        previous-entry
+bind pager                 l        next-entry
+bind index,pager           <F7>     display-toggle-weed # i.e. toggle all/some header display
+
+bind index - collapse-thread
+bind index _ collapse-all
+
+
+#################################################################
+# Macro Bindings
+#################################################################
+
+# for re-sourcing the rc file in a running mutt
+macro index    <F4>     ":source ~/.muttrc\n" "Source .muttrc."
+
+# external mail retrieval
+macro index    <F9>    "<enter-command>unset wait_key^m<shell-escape>~/local/bin/get_mail^m<enter-command>set wait_key^m" "get new mail"
+
+
+#################################################################
 # Basic Settings                                                #
 #################################################################
 
 # always ask to confirm quitting - not just when there are deleted messages ...
 set quit=ask-yes
-
-# for re-sourcing the rc file in a running mutt
-macro index \Ch ":source ~/.muttrc\n" "Source .muttrc."
-
-# external mail retrieval
-macro index G "<enter-command>unset wait_key^m<shell-escape>~/local/bin/get_mail^m<enter-command>set wait_key^m" "get new mail"
-macro pager G "<enter-command>unset wait_key^m<shell-escape>~/local/bin/get_mail^m<enter-command>set wait_key^m" "get new mail"
-
 
 set folder=~/mail
 set use_from=yes
@@ -59,8 +84,6 @@ set sort=reverse-threads
 set sort_aux=last-date-received
 # don't group messages into threads with same subject but without references
 set strict_threads=yes
-bind index - collapse-thread
-bind index _ collapse-all
 
 
 # message number, status flags, local time, display list name (if any),
