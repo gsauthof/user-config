@@ -67,10 +67,12 @@ bind index _ collapse-all
 # message size, messages in a thread, subject
 set index_format="%4C %Z %[%F %T] %-15.15L (%4c) %M %s"
 
+
 #################################################################
 # Pager
 #################################################################
 
+set wrap=78
 # options for the builtin pager
 # wrappers lines shouldn't be marked with plus signs ...
 set markers=no
