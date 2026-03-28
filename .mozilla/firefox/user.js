@@ -195,3 +195,10 @@ user_pref("browser.safebrowsing.downloads.remote.enabled", false);
 user_pref("pdfjs.disabled", true);
 
 
+// use native file picker on Linux
+// such as the KDE one
+// for KDE requires xdg-desktop-portal-kde being installed
+// not enabled by default since missing external package might
+// lead to no file-picker being displayed
+// user_pref("widget.use-xdg-desktop-portal.file-picker", 1);
+
