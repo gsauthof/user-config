@@ -65,6 +65,10 @@ set print=ask-yes
 # interoperability issues when printing with a Kyocera FS-C5100DN (on f35)
 set print_command='set -e; f=$(mktemp -p "$HOME"/.cache/mutt); g=$(mktemp -p "$HOME"/.cache/mutt); muttprint -P A4 -p TO_FILE:"$f"; ps2pdf "$f" "$g"; evince "$g"; rm "$f" "$g"'
 
+# use urlscan helper instead of the default urlview
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+
 
 #################################################################
 # Appearance                                                    #
