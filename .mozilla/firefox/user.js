@@ -173,6 +173,18 @@ user_pref("browser.search.visualSearch.featureGate", false);
 user_pref("sidebar.notification.badge.aichat"     , false);
 user_pref("pdfjs.enableGuessAltText"              , false);
 user_pref("pdfjs.enableAltTextModelDownload"      , false);
+// the result of checking the 'Block AI enhancements' kill switch
+// under 'AI controls' in the Firefox setting UI
+// cf. https://bugzilla.mozilla.org/show_bug.cgi?id=1971973
+user_pref("browser.ai.control.default"              , "blocked");
+user_pref("browser.ai.control.linkPreviewKeyPoints" , "blocked");
+user_pref("browser.ai.control.pdfjsAltText"         , "blocked");
+user_pref("browser.ai.control.sidebarChatbot"       , "blocked");
+user_pref("browser.ai.control.smartTabGroups"       , "blocked");
+user_pref("browser.ai.control.smartWindow"          , "blocked");
+user_pref("browser.ai.control.translations"         , "blocked");
+user_pref("browser.translations.enable"             , false);
+user_pref("pdfjs.enableAltText"                     , false);
 
 
 // improve usability of scrollbars
