@@ -27,6 +27,8 @@ user_pref("browser.fixup.alternate.enabled", false);
 user_pref("browser.search.suggest.enabled", false);
 // disable: 'Show search terms in the address bar on results pages'
 user_pref("browser.urlbar.showSearchTerms.enabled", false);
+// always show url scheme, not just when copying ...
+user_pref("browser.urlbar.trimURLs", false);
 
 user_pref("browser.startup.homepage", "about:blank");
 // restore previous session on startup (instead of showing a blank-/homepage)
