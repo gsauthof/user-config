@@ -192,6 +192,15 @@ user_pref("pdfjs.enableAltText"                     , false);
 // improve usability of scrollbars
 user_pref("widget.gtk.overlay-scrollbars.enabled"   , false);
 user_pref("layout.css.scrollbar-width-thin.disabled", true );
+// increase width!
+user_pref("widget.non-native-theme.scrollbar.size.override", 23);
+// always place scrollbar on the right side
+// cf. https://kb.mozillazine.org/Layout.scrollbar.side
+user_pref("layout.scrollbar.side", 2);
+// use rectangular scrollbars
+// 0: default, 2: gtk, 3: android (like gtk),
+// 4: win10, 5: win11 (slightly thinner than win10)
+user_pref("widget.non-native-theme.scrollbar.style", 5);
 
 // disable automatically filling in credit card and payment methods
 user_pref("extensions.formautofill.creditCards.enabled", false);
