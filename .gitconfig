@@ -6,6 +6,10 @@ status      = auto
 branch      = auto
 interactive = true
 
+[log]
+# use YYYY-MM-DD HH24:MI:SS +-OFF, by default
+date = iso
+
 [alias]
 parents = show -s --pretty=format:'%P'
 co      = checkout
@@ -35,6 +39,12 @@ colorMoved     = plain
 # use (i)ndex, (w)ork, (c)ommit and (o)bject prefixes in the diff header
 # (instead of a and b)
 mnemonicPrefix = true
+
+# better diffs for man pages
+# cf. https://git.kernel.org/pub/scm/docs/man-pages/man-pages.git/tree/CONTRIBUTING.d/git
+# -> also requires ~/.config/git/attributes glob match rule
+[diff "man"]
+xfuncname = ^\\.S[SHsh] .*$
 
 [merge]
 # <<<<<<<
