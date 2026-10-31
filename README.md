@@ -1,7 +1,17 @@
 This repository contains dotfiles, i.e. configuration files
 usually located in the home directory.
 
-2016, Georg Sauthoff <mail@georg.so>
+2016-2026, Georg Sauthoff <mail@georg.so>
+
+
+## Repository Remote Location
+
+The main remote location of this repository is:
+https://codeberg.org/gms/user-config
+
+There is also a mirror at:
+https://opencommit.eu/gms/user-config
+
 
 ## Rationale
 
@@ -31,7 +41,7 @@ creates all links.
 Example:
 
     $ cd
-    $ git clone https://github.com/gsauthof/user-config.git config
+    $ git clone https://codeberg.org/gms/user-config.git config
     $ cd config
     $ git submodule update --init
     $ dry=1 ./install.sh
